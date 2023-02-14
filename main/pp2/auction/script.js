@@ -21228,7 +21228,7 @@ const Xx = cc.extend({
                 return
             }
             if (this.hideLobbyButtons(), !e.isAllowedToStartGame) {
-                _e("#auction-lobby-text").html("sit back and relax!"), this.showScreen("#state-lobby");
+                _e("#auction-lobby-text").html("Lehne dich zurück und entspanne!"), this.showScreen("#state-lobby");
                 return
             }
             const m = t.lobbyState;
@@ -21262,13 +21262,13 @@ const Xx = cc.extend({
                     if (t.screwingPlayerId === this.client.userId)
                         for (f = 0; f < t.playersToScrew.length; f++) R += `<button type="button" data-player="${t.playersToScrew[f].id}" class="pure-input-1 button-large pure-button button-auction auction-screw-player-button">${t.playersToScrew[f].name}</button>`;
                     else R = "<span class='big-text'><p>Halte dich zurück, ein anderer Spieler nagelt bereits</p></span>";
-                else t.bids && (R = `<button type="button" class="pure-input-1 button-large pure-button button-auction auction-screw-button"${V?"":" disabled"}>SCREW</button>`)
+                else t.bids && (R = `<button type="button" class="pure-input-1 button-large pure-button button-auction auction-screw-button"${V?"":" disabled"}>NAGELN</button>`)
             } else R = "";
             _e("#auction-screw-content").html(R);
             let D = "";
             if (t.playerSignalledForBank !== void 0) {
                 let V, X;
-                t.playerSignalledForBank ? (V = !0, X = "BANK ANGERUFEN") : e.numLoans >= 3 ? (V = !0, X = "SCHLECHTE BEDINGUNGEN") : e.timesOpenedBank >= 3 ? (V = !0, X = "ANRUF BEENDEN") : (V = !1, X = "DIE BANK ANRUFEN"), D += `<button type="button" class="pure-input-1 button-large pure-button button-auction auction-open-bank-button"${V?" disabled":""}>${X}</button><br>`
+                t.playerSignalledForBank ? (V = !0, X = "BANK ANGERUFEN") : e.numLoans >= 3 ? (V = !0, X = "NICHT KREDITWÜRDIG") : e.timesOpenedBank >= 3 ? (V = !0, X = "ANRUF BEENDEN") : (V = !1, X = "DIE BANK ANRUFEN"), D += `<button type="button" class="pure-input-1 button-large pure-button button-auction auction-open-bank-button"${V?" disabled":""}>${X}</button><br>`
             } else t.loanAmount !== void 0 && t.debtAmount !== void 0 && e.hasTakenOutLoanInCurrentBank !== void 0 && (e.numLoans >= 3 ? D += `<span class="big-text"><p>Du hast schon drei Kredite! Das reicht!</p></span>` : (D += `<span class="big-text"><p>Du erhältst: ${this.formatMoney(t.loanAmount)}, und schuldest ${this.formatMoney(t.debtAmount)}</p></span>`, D += `<button type="button" class="pure-input-1 button-large pure-button button-auction auction-take-loan-button"${e.hasTakenOutLoanInCurrentBank?" disabled":""}>KREDIT NEHMEN</button><br>`));
             _e("#auction-bank-content").html(D), this.showScreen("#state-auction")
         } else if (i && i === "PostGame") {
@@ -21360,13 +21360,13 @@ const Xx = cc.extend({
         if (!t || this.lastMessage && this.lastMessage.id === t.id) return;
         this.lastMessage = t;
         const e = await Gx(Object.assign({
-            "../images/bank_arrow.png": () => Ri(() => import("main/pp2/auction/assets/bank_arrow.bc369641.js"), []),
-            "../images/buyer0_arrow.png": () => Ri(() => import("main/pp2/auction/assets/buyer0_arrow.2c1457f7.js"), []),
-            "../images/buyer1_arrow.png": () => Ri(() => import("main/pp2/auction/assets/buyer1_arrow.6488b809.js"), []),
-            "../images/buyer2_arrow.png": () => Ri(() => import("main/pp2/auction/assets/buyer2_arrow.74324be2.js"), []),
-            "../images/dog_arrow.png": () => Ri(() => import("main/pp2/auction/assets/dog_arrow.035272f5.js"), []),
-            "../images/greg_arrow.png": () => Ri(() => import("main/pp2/auction/assets/greg_arrow.a4543b5d.js"), []),
-            "../images/oldman_arrow.png": () => Ri(() => import("main/pp2/auction/assets/oldman_arrow.80ef9f3e.js"), [])
+            "../images/bank_arrow.png": () => Ri(() => import("./assets/bank_arrow.bc369641.js"), []),
+            "../images/buyer0_arrow.png": () => Ri(() => import("./assets/buyer0_arrow.2c1457f7.js"), []),
+            "../images/buyer1_arrow.png": () => Ri(() => import("./assets/buyer1_arrow.6488b809.js"), []),
+            "../images/buyer2_arrow.png": () => Ri(() => import("./assets/buyer2_arrow.74324be2.js"), []),
+            "../images/dog_arrow.png": () => Ri(() => import("./assets/dog_arrow.035272f5.js"), []),
+            "../images/greg_arrow.png": () => Ri(() => import("./assets/greg_arrow.a4543b5d.js"), []),
+            "../images/oldman_arrow.png": () => Ri(() => import("./assets/oldman_arrow.80ef9f3e.js"), [])
         }), `../images/${t.sender.id}_arrow.png`);
         this.htmlWhenOff = "", this.htmlWhenOff += `<div class="auction-messager"><img src="${e.default}"></div>`, this.htmlWhenOff += `<div class="message-content text-content"><p>${t.text}</p></div>`;
         const n = _e("#auction-message"),
