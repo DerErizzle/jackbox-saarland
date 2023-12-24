@@ -14854,7 +14854,7 @@ var Xae = JM((koe, _1) => {
             features: ["moderation", "kicking"],
             categoryId: "RangeGameGame"
         }, {
-            name: "Quixort",
+            name: "Quixort - Dodo Edition",
             tag: "lineup",
             wrapper: "vue",
             isPublic: !0,
