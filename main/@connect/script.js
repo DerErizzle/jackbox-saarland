@@ -20666,7 +20666,7 @@ var Xae = JM((koe, _1) => {
             if (!Ye.isSupported) return;
             const e = yA();
             Ye.set("twitchState", e);
-            const r = "d9dcx7ul1pzys90a75hw2xsxilby5n";
+            const r = "qnx35o5azfc5ueegbpuzu1wekew6aj";
             let n = `https://${window.location.hostname}`;
             window.location.hostname === "localhost" && (n = "http://localhost:9090/");
             let i = "https://id.twitch.tv/oauth2/authorize";
@@ -20699,7 +20699,7 @@ var Xae = JM((koe, _1) => {
                 const n = await (await fetch("https://api.twitch.tv/helix/users", {
                     headers: {
                         Authorization: `Bearer ${e}`,
-                        "Client-ID": "d9dcx7ul1pzys90a75hw2xsxilby5n"
+                        "Client-ID": "qnx35o5azfc5ueegbpuzu1wekew6aj"
                     }
                 })).json();
                 if (!n || !n.data) return null;
